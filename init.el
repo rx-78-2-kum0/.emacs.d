@@ -75,6 +75,7 @@
 
   ;; Packages
   (require 'init-package)
+  (require 'init-libs)
 
   ;; Preferences
   (require 'init-base)

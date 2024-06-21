@@ -182,7 +182,9 @@
     JetBrains\ Mono
     Pes\ Mono
     Fairfax\ Hax\ HD
-    Unifont)
+    Unifont
+    IBM\ Plex\ Mono
+    Holic)
   "Font list.")
 
 

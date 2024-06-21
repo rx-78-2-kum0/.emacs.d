@@ -54,6 +54,24 @@
   (lacquer-font-list        my/font-list))
 
 
+;; (setq holo-layer-enable-cursor-animation t)
+;; (setq holo-layer-python-command "/opt/homebrew/bin/python3")
+;; (setq holo-layer-enable-indent-rainbow t)
+
+;; (add-to-list 'load-path "~/.emacs.d/site-lisp/holo-layer")
+;; (require 'holo-layer)
+;; (holo-layer-enable)
+;; (use-package holo-layer
+;;   :load-path "~/.emacs.d/site-lisp/holo-layer"
+;;   :init
+;;   (require 'holo-layer)
+;;   (holo-layer-enable)
+;;   :custom
+;;   (holo-layer-python-command "/opt/homebrew/bin/python3")
+;;   (holo-layer-enable-cursor-animation t)
+;;   (holo-layer-enable-indent-rainbow   t))
+
+
 (when (and sys/mac-ns-p sys/mac-x-p)
   (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
   (add-to-list 'default-frame-alist '(ns-appearance . dark))
@@ -351,7 +369,8 @@
   :load-path "~/.emacs.d/site-lisp/mood-line"
   :hook
   (after-init . mood-line-mode)
-  ;; :custom
+  :custom
+  (mood-line-left-align '(modified workspace buffer-name anzu multiple-cursors nyan parrot theme))
   ;; (mood-line-background "#002FA7")
   ;; (mood-line-inactive-background "#5bc2e7")
   )
