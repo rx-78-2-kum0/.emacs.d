@@ -134,6 +134,7 @@
   (dashboard-image-banner-max-width 200)
   (dashboard-center-content         t)
   (dashboard-show-shortcuts         nil)
+  ;; (dashboard-projects-backend       'projectile)
   (dashboard-items                  '((recents  . 10)
                                       (projects . 10)))
   ;; (dashboard-init-info (concat "Happy hacking, " user-login-name " - Emacs ♥ you!"))

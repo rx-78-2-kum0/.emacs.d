@@ -6,17 +6,12 @@
 ;;; Code:
 
 
-(use-package rustic
+(use-package rust-mode
   :custom
+  (rust-format-on-save         t)
+  (rust-mode-treesitter-derive t)
   (rust-indent-offset          2)
-  (rustic-rustfmt-config-alist '((tab_spaces . 2) (edition . "2021")))
-  (rustic-format-trigger       'on-save)
-  :config
-  (defun rustic-cargo-test-run-with-args (args)
-    "Start compilation process for  \"cargo test\" with ARGS."
-    (interactive "sPlease enter test arguments: ")
-    (setq rustic-test-arguments args)
-    (rustic-cargo-test-run args)))
+  (rust-rustfmt-switches       (list "--edition" "2018" "--config-path" (concat (getenv "HOME") "/.config/rustfmt"))))
 
 
 (use-package rust-playground)

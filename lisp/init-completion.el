@@ -229,10 +229,10 @@
 
 (use-package embark
   :bind
-  (("s-." . embark-act)
+  (("s-."   . embark-act)
    ("C-s-." . embark-act)
-   ("M-." . embark-dwim)
-   ("M-s-." . xref-find-definitions)
+   ("M-."   . embark-dwim)
+   ("M-s ." . xref-find-definitions)
    ([remap describe-bindings] . embark-bindings))
   :init
   ;; Optionally replace the key help with a completing-read interface

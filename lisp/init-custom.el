@@ -233,11 +233,13 @@
   "Hugo github deploy buffer name.")
 
 
-(defconst my/lsp-major-mode '(go-mode web-mode ng2-mode ng2-html-mode ng2-ts-mode sh-mode ruby-mode css-mode scss-mode sass-mode clojure-mode dart-mode rust-mode swift-mode js-mode graphql-mode html-mode typescript-mode typescriptreact-mode)
+(defconst my/lsp-major-mode
+  ;;'(go-mode web-mode ng2-mode ng2-html-mode ng2-ts-mode sh-mode ruby-mode css-mode scss-mode sass-mode clojure-mode dart-mode rust-mode swift-mode js-mode graphql-mode html-mode typescript-mode jtsx-tsx-mode jtsx-typescript-mode json-mode)
+  '()
   "Lsp Supported major mode.")
 
 
-(defconst my/eglot-major-mode '(js-mode typescript-mode typescriptreact-mode markdown-mode yaml-mode)
+(defconst my/eglot-major-mode '(js-mode typescript-mode jtsx-tsx-mode jtsx-typescript-mode jtsx-jsx-mode rust-mode markdown-mode yaml-mode)
   "Eglot Supported major mode.")
 
 

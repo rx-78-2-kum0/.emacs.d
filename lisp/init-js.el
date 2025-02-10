@@ -19,15 +19,12 @@
 ;;   (js2-strict-missing-semi-warning nil))
 
 
-(use-package js-mode
-  :ensure nil
-  ;; :mode
-  ;; ("\\.tsx$" . js-jsx-mode)
-  ;; ("\\.jsx$" . js-jsx-mode)
-  :custom
-  (js-jsx-syntax       t)
-  (js-indent-level     2)
-  (js-jsx-indent-level 2))
+;; (use-package js-mode
+;;   :ensure nil
+;;   :custom
+;;   (js-jsx-syntax       t)
+;;   (js-indent-level     2)
+;;   (js-jsx-indent-level 2))
 
 
 ;; (use-package coverlay)
@@ -40,29 +37,23 @@
 ;;   ("\\.[jt]sx$" . tsx-mode))
 
 
-(define-derived-mode typescriptreact-mode web-mode "TypescriptReact"
-  "A major mode for tsx.")
-;; (define-derived-mode typescriptreact-mode typescript-ts-mode "TypescriptReact"
-;;   "A major mode for tsx.")
+;; (use-package typescript-mode
+;; :mode
+;; ("\\.tsx\\'" . typescriptreact-mode)
+;;   :custom
+;;   (typescript-indent-level 2))
 
 
-(use-package typescript-mode
-  :mode
-  ("\\.tsx\\'" . typescriptreact-mode)
-  :custom
-  (typescript-indent-level 2))
-
-
-(use-package ng2-mode
-  :mode
-  (".+\\.component\\.html$" . ng2-mode)
-  ("\\.component.ts\\'"     . ng2-mode)
-  ;; ("\\.service.ts\\'"       . ng2-mode)
-  ;; ("\\.pipe.ts\\'"          . ng2-mode)
-  ;; ("\\.directive.ts\\'"     . ng2-mode)
-  ;; ("\\.guard.ts\\'"         . ng2-mode)
-  ;; ("\\.module.ts\\'"        . ng2-mode)
-  )
+;; (use-package ng2-mode
+;;   :mode
+;;   (".+\\.component\\.html$" . ng2-mode)
+;;   ("\\.component.ts\\'"     . ng2-mode)
+;;   ;; ("\\.service.ts\\'"       . ng2-mode)
+;;   ;; ("\\.pipe.ts\\'"          . ng2-mode)
+;;   ;; ("\\.directive.ts\\'"     . ng2-mode)
+;;   ;; ("\\.guard.ts\\'"         . ng2-mode)
+;;   ;; ("\\.module.ts\\'"        . ng2-mode)
+;;   )
 
 
 (provide 'init-js)

@@ -37,6 +37,7 @@
   (truncate-lines                    nil)
   (org-todo-keywords                 '((sequence "TODO(t)" "DOING(i)" "HANGUP(h)" "|" "DONE(d)" "CANCEL(c)")
                                        (sequence "⚑(T)" "🏴(I)" "❓(H)" "|" "✔(D)" "✘(C)")))
+  (org-checkbox-hierarchical-statistics  t)
   (org-todo-keyword-faces            '(("HANGUP" . warning)
                                        ("❓" . warning)))
   (org-priority-faces                '((?A . error)

@@ -91,16 +91,10 @@ directory."
          flymake-err-line-patterns)))
 
 
-(use-package lsp-sourcekit
-  :after lsp-mode
-  :custom
-  (lsp-sourcekit-executable (string-trim (shell-command-to-string "xcrun --find sourcekit-lsp"))))
-
-
-;; (use-package flycheck-swift
-;;   :after flycheck
-;;   :hook
-;;   (swift-mode . flycheck-swift-setup))
+;; (use-package lsp-sourcekit
+;;   :after lsp-mode
+;;   :custom
+;;   (lsp-sourcekit-executable (string-trim (shell-command-to-string "xcrun --find sourcekit-lsp"))))
 
 
 (provide 'init-swift)

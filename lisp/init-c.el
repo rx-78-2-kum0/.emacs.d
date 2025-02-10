@@ -6,20 +6,20 @@
 ;;; Code:
 
 ;; C/C++/Objective-C lsp
-(use-package ccls
-  :defines projectile-project-root-files-top-down-recurring
-  :hook
-  ((c-mode c++-mode objc-mode cuda-mode) . (lambda ()
-                                             (require 'ccls)
-                                             (lsp)))
-  :custom
-  (ccls-initialization-options my/ccls-initialization-options)
-  :config
-  (with-eval-after-load 'projectile
-    (setq projectile-project-root-files-top-down-recurring
-          (append '("compile_commands.json"
-                    ".ccls")
-                  projectile-project-root-files-top-down-recurring))))
+;; (use-package ccls
+;;   :defines projectile-project-root-files-top-down-recurring
+;;   :hook
+;;   ((c-mode c++-mode objc-mode cuda-mode) . (lambda ()
+;;                                              (require 'ccls)
+;;                                              (lsp)))
+;;   :custom
+;;   (ccls-initialization-options my/ccls-initialization-options)
+;;   :config
+;;   (with-eval-after-load 'projectile
+;;     (setq projectile-project-root-files-top-down-recurring
+;;           (append '("compile_commands.json"
+;;                     ".ccls")
+;;                   projectile-project-root-files-top-down-recurring))))
 
 
 ;; cpp keyword highlight

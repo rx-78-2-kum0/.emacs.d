@@ -1,0 +1,15 @@
+# -*- mode: snippet -*-
+# name: react-component-fch
+# key: fch
+# --
+
+import { FC, PropsWithChildren } from "react";
+import { I$1Props } from "./types";
+
+export const ${1:NAME}: FC<PropsWithChildren<I$1Props>> = ({ children }) => {
+	return (
+    <div>
+		  ${2:}
+    </div>
+  );
+}

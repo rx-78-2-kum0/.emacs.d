@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: export
+# key: export
+# --
+
+export { ${2:name} } from "${1:package}";

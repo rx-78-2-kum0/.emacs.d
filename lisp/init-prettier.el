@@ -8,7 +8,7 @@
 
 (use-package prettier-js
   :hook
-  ((web-mode typescriptreact-mode tsx-mode ng2-mode typescript-mode scss-mode css-mode json-mode html-mode ng2-html-mode graphql-mode yaml-mode) . prettier-js-mode)
+  ((web-mode typescriptreact-mode jtsx-jsx-mode jtsx-tsx-mode jtsx-typescript-mode ng2-mode typescript-mode scss-mode css-mode json-mode html-mode ng2-html-mode graphql-mode yaml-mode) . prettier-js-mode)
   (js-mode . (lambda ()
                (unless (member (file-name-extension buffer-file-name) '("prisma"))
                  (prettier-js-mode)))))

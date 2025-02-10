@@ -44,6 +44,9 @@
   ("\\.prisma$" . prisma-mode))
 
 
+(use-package fish-mode)
+
+
 ;; (use-package treesit-auto
 ;;   :hook
 ;;   (after-init . global-treesit-auto-mode)

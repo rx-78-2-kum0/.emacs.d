@@ -1,8 +1,0 @@
-;; -*- mode: emacs-lisp; lexical-binding:t; coding: utf-8-emacs; -*-
-;; -------------------------------------------------------------------------
-;; Tabspaces Session File for Emacs
-;; -------------------------------------------------------------------------
-;; Created Fri Feb 23 14:50:12 2024
-
-;; Tabs and buffers:
-(setq tabspaces--session-list '((("/Users/zakudriver/.emacs.d/init.el" "/Users/zakudriver/.emacs.d/lisp/init-projectile.el" "/Users/zakudriver/.emacs.d/elpa/projectile-20231130.1934/projectile.el" "/Users/zakudriver/.emacs.d/lisp/init-workspace.el" "/Users/zakudriver/code/rockontrol/webapp-llm-chat/src/pages/mgr/Repository/AttachDataset.tsx" "/Users/zakudriver/code/rockontrol/webapp-llm-chat/src/api/llmchat/api/workspace.ts" "/Users/zakudriver/code/rockontrol/webapp-llm-chat/src/api/llmchat/api/typings.d.ts" "/Users/zakudriver/code/rockontrol/webapp-llm-chat/src/pages/mgr/DatastoreDocumentDetails/BaseMark.tsx" "/Users/zakudriver/code/rockontrol/webapp-llm-chat/src/pages/apps/AppDetail.tsx" "/Users/zakudriver/code/rockontrol/webapp-llm-chat/src/pages/mgr/DatastoreDocumentDetails/TestSplit.tsx" "/Users/zakudriver/code/rockontrol/webapp-llm-chat/src/pages/mgr/Document/BaseMark.tsx" "/Users/zakudriver/code/rockontrol/webapp-llm-chat/src/pages/mgr/Document/TagsInput/TagsInput.tsx" "/Users/zakudriver/code/rockontrol/webapp-llm-chat/src/pages/mgr/Document/TestSplit.tsx" "/Users/zakudriver/code/rockontrol/webapp-llm-chat/src/pages/mgr/DatastoreDetails/DatastoreTest/DatastoreTest.tsx") . "init.el")))

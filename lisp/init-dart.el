@@ -10,11 +10,11 @@
 
 
 ;; dart lsp
-(use-package lsp-dart
-  :custom
-  (lsp-dart-outline         nil)
-  (lsp-dart-sdk-dir         (my-home-path-resolve "/.flutter/bin/cache/dart-sdk"))
-  (lsp-dart-flutter-sdk-dir (my-home-path-resolve "/.flutter")))
+;; (use-package lsp-dart
+;;   :custom
+;;   (lsp-dart-outline         nil)
+;;   (lsp-dart-sdk-dir         (my-home-path-resolve "/.flutter/bin/cache/dart-sdk"))
+;;   (lsp-dart-flutter-sdk-dir (my-home-path-resolve "/.flutter")))
 
 
 (use-package dart-mode

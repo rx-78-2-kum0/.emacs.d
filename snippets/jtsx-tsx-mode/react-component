@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: react-component
+# key: rc
+# --
+
+const ${1:NAME} = () => {
+	return (
+    <div>
+		  ${2:}
+    </div>
+  );
+}

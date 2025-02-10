@@ -85,9 +85,9 @@
 
 
 ;; An all-in-one comment command to rule them all
-(use-package comment-dwim-2
-  :bind
-  ([remap comment-dwim] . comment-dwim-2))
+;; (use-package comment-dwim-2
+;;   :bind
+;;   ([remap comment-dwim] . comment-dwim-2))
 
 
 ;; Multiple cursors
@@ -111,6 +111,10 @@
   :hook
   (after-init . electric-pair-mode)
   :custom
+  (electric-pair-preserve-balance t)
+  (electric-pair-delete-adjacent-pairs t)
+  (electric-pair-skip-self 'electric-pair-default-skip-self)
+  (electric-pair-open-newline-between-pairs t)
   (electric-pair-pairs
    '((?\" . ?\")
      (?\' . ?\')
@@ -249,9 +253,9 @@
   (setq hs-set-up-overlay #'hs-display-code-line-counts))
 
 
-(use-package whole-line-or-region
-  :hook
-  (after-init . whole-line-or-region-global-mode))
+;; (use-package whole-line-or-region
+;;   :hook
+;;   (after-init . whole-line-or-region-global-mode))
 
 
 ;; (use-package selectric-mode

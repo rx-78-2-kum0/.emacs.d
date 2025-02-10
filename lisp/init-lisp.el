@@ -24,10 +24,6 @@
       (paredit-backward-delete arg))))
 
 
-;; (use-package eldoc
-;;   :ensure nil)
-
-
 ;; emacs-lisp-mode
 (use-package elisp-mode
   :ensure nil

@@ -5,6 +5,7 @@
 
 ;;; Code:
 
+
 ;; Environment
 (defun set-exec-path-from-shell-PATH ()
   "Set up Emacs's variable `exec-path' and PATH environment variable to match.
@@ -17,7 +18,14 @@ that used by the user's shell."
     (setenv "PATH" path-from-shell)
     (setq exec-path (split-string path-from-shell path-separator))))
 
-(set-exec-path-from-shell-PATH)
+;; (set-exec-path-from-shell-PATH)
+
+
+(let*
+    ((fish-path (shell-command-to-string "/opt/homebrew/bin/fish -i -c \"echo -n \\$PATH[1]; for val in \\$PATH[2..-1];echo -n \\\":\\$val\\\";end\""))
+     (full-path (append exec-path (split-string fish-path ":"))))
+  (setenv "PATH" fish-path)
+  (setq exec-path full-path))
 
 
 (eval-when-compile
@@ -79,8 +87,6 @@ that used by the user's shell."
       ring-bell-function              'ignore  ;; disable the annoying bell ring
       mouse-drag-copy-region          t
       create-lockfiles                nil
-      ;; Increase how much is read from processes in a single chunk (default is 4kb)
-      read-process-output-max         #x10000  ;; 64kb
 
       adaptive-fill-regexp            "[ t]+|[ t]*([0-9]+.|*+)[ t]*"
       adaptive-fill-first-line-regexp "^* *$"
@@ -94,13 +100,21 @@ that used by the user's shell."
   (setq command-line-x-option-alist nil))
 
 
+
+(setq process-adaptive-read-buffering nil
+      inhibit-compacting-font-caches  t
+      read-process-output-max         (* 1024 1024 4))
+(setq-default message-log-max t)
+
 ;; Garbage Collector Magic Hack
 (use-package gcmh
   :hook (emacs-startup . gcmh-mode)
   :init
   (setq gcmh-idle-delay 'auto
         gcmh-auto-idle-delay-factor 10
-        gcmh-high-cons-threshold #x1000000)) ; 16MB
+        gcmh-high-cons-threshold (* 32 1024 1024)))
+
+(add-hook 'after-init-hook #'garbage-collect t)
 
 
 ;; History
@@ -135,6 +149,11 @@ that used by the user's shell."
                                    search-ring
                                    regexp-search-ring
                                    extended-command-history)))
+
+
+(use-package amx
+  :custom
+  (amx-history-length 20))
 
 
 ;; which-key

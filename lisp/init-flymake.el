@@ -9,8 +9,6 @@
 
 (use-package flymake
   :diminish
-  :hook
-  (prog-mode . flymake-mode)
   :bind
   ("C-c c c" . flymake-show-buffer-diagnostics)
   :custom
@@ -31,23 +29,20 @@
   (sideline-backends-right '(sideline-flymake)))
 
 
-;; (use-package flymake-eslint
-;;   :custom
-;;   (flymake-eslint-executable-name         "npx")
-;;   (flymake-eslint-prefer-json-diagnostics t))
-
-
-;; (use-package flymake-eslint
-;;   :preface
-;;   (defun me/flymake-eslint-enable-maybe ()
-;;     "Enable `flymake-eslint' based on the project configuration.
-;; Search for the project ESLint configuration to determine whether the buffer
-;; should be checked."
-;;     (when-let* ((root (locate-dominating-file (buffer-file-name) "package.json"))
-;;                 (rc (locate-file ".eslintrc" (list root) '(".js" ".json"))))
-;;       (make-local-variable 'exec-path)
-;;       (push (file-name-concat root "node_modules" ".bin") exec-path)
-;;       (flymake-eslint-enable))))
+(use-package flymake-eslint
+  :after eglot
+  :hook
+  (eglot-managed-mode . my/flymake-eslint-enable)
+  :custom
+  (flymake-eslint-prefer-json-diagnostics t)
+  :config
+  (defun my/flymake-eslint-enable ()
+    "Enable `flymake-eslint' based on the project configuration."
+    (interactive)
+    (when-let* ((root (or (locate-dominating-file (buffer-file-name) "pnpm-lock.yaml") (locate-dominating-file (buffer-file-name) "package-lock.json"))))
+      (make-local-variable 'exec-path)
+      (push (file-name-concat root "node_modules" ".bin") exec-path)
+      (flymake-eslint-enable))))
 
 
 (provide 'init-flymake)

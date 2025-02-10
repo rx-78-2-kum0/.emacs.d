@@ -1,0 +1,15 @@
+# -*- mode: snippet -*-
+# name: react-component-fc
+# key: fc
+# --
+
+import { FC } from "react";
+import { I$1Props } from "./types";
+
+export const ${1:NAME}: FC<I$1Props> = ({ }) => {
+	return (
+    <div>
+		  ${2:}
+    </div>
+  );
+}

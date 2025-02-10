@@ -32,7 +32,7 @@
    ("C-c c z"               . counsel-fzf)
    ("C-c c p"               . counsel-pt)
    ("C-c c m"               . counsel-imenu)
-   
+
    :map ivy-minibuffer-map
    ([escape] . minibuffer-keyboard-quit)
    :map swiper-map
@@ -190,7 +190,7 @@
       (kill-new path)
       (message "Copied path: \"%s\"." path)))
 
-  
+
   (defun my-swiper-toggle-counsel-rg ()
     "Toggle `counsel-rg' and `swiper'/`swiper-isearch' with the current input."
     (interactive)
@@ -426,7 +426,7 @@
                                        :overline nil :strike-through nil)))
           (setq-local cursor-type nil)))))
   (advice-add #'ivy-posframe--minibuffer-setup :override #'my-ivy-posframe--minibuffer-setup)
-  
+
   ;; Prettify the buffer
   (defun my-ivy-posframe--prettify-buffer (&rest _)
     "Add top and bottom margin to the prompt."

@@ -193,6 +193,8 @@
      tabulated-list-mode
      Buffer-menu-mode
 
+     special-mode
+
      flymake-diagnostics-buffer-mode
      flycheck-error-list-mode flycheck-verify-mode
 

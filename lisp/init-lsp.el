@@ -157,53 +157,20 @@
 
 (use-package lsp-treemacs)
 
-;; (use-package eglot
-;;   :hook
-;;   ((prog-mode . (lambda ()
-;;                   (unless (derived-mode-p 'emacs-lisp-mode 'lisp-mode 'makefile-mode 'snippet-mode)
-;;                     (eglot-ensure))))
-;;    ((markdown-mode yaml-mode yaml-ts-mode) . eglot-ensure))
-;;   :custom
-;;   (eglot-send-changes-idle-time 0)
-;;   :config
-;;   (use-package consult-eglot
-;;     :bind (:map eglot-mode-map
-;;                 ("C-M-." . consult-eglot-symbols))))
-
-
-;; (use-package eglot
-;;   :defer 3
-;;   :hook
-;;   (prog-mode . (lambda ()
-;;                  (if (apply 'derived-mode-p my/eglot-major-mode)
-;;                      (eglot-ensure))))
-;;   :custom
-;;   (eglot-events-buffer-size 0)
-;;   (eglot-autoshutdown       t)
-;;   :config
-;;   (cl-pushnew '((js-mode typescript-mode typescriptreact-mode) . ("typescript-language-server" "--stdio"))
-;;               eglot-server-programs
-;;               :test #'equal)
-
-;;   (use-package consult-eglot
-;;     :bind
-;;     (:map eglot-mode-map
-;;           ("C-M-." . consult-eglot-symbols))))
-
-
-;; (use-package eglot
-;;   :hook
-;;   ((prog-mode . (lambda ()
-;;                   (if (apply 'derived-mode-p my/eglot-major-mode)
-;;                       (eglot-ensure))))
-;;    ((markdown-mode yaml-mode yaml-ts-mode) . eglot-ensure))
-;;   :init
-;;   (setq eglot-send-changes-idle-time 0)
-;;   :config
-;;   (use-package consult-eglot
-;;     :bind
-;;     (:map eglot-mode-map
-;;           ("C-M-." . consult-eglot-symbols))))
+(use-package eglot
+  :defer 3
+  :hook
+  (prog-mode . (lambda ()
+                 (if (apply 'derived-mode-p my/eglot-major-mode)
+                     (eglot-ensure))))
+  :custom
+  (eglot-events-buffer-size 0)
+  (eglot-autoshutdown       t)
+  :config
+  (use-package consult-eglot
+    :bind
+    (:map eglot-mode-map
+          ("C-M-." . consult-eglot-symbols))))
 
 
 (provide 'init-lsp)
