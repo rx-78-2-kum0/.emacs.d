@@ -75,3 +75,5 @@ projects
 nov-places
 *.sqlite
 /rust-playground
+/org-persist
+/quelpa
